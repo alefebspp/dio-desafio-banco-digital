@@ -14,6 +14,14 @@ public class Banco {
         this.contas.add(conta);
     }
 
+    public void removerConta(String nomeCliente){
+        List<Conta> contasFiltradas = this.contas.stream().filter(conta -> {
+            Cliente cliente = conta.getCliente();
+            return !cliente.getNome().equals(nomeCliente);
+        }).toList();
+        this.contas = contasFiltradas;
+    }
+
     public void listarContas(){
         for(Conta conta: contas){
             conta.imprimirExtrato();

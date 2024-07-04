@@ -17,6 +17,8 @@ public class Main {
 
         banco.adicionarConta(cc);
         banco.adicionarConta(poupanca);
+
+        banco.removerConta("João");
         banco.listarContas();
 
     }
